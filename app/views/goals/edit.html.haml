@@ -1,0 +1,7 @@
+= link_to "back", { :action => "view", :id => @goal.id}
+
+= form_for @goal, :as => :goal, :url => { :action => "update" } do |f|
+  = f.text_field :name
+  = f.text_field :goal_type
+  
+  = submit_tag "Update"

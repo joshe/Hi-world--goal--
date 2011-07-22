@@ -4,6 +4,8 @@ Goalie::Application.routes.draw do
   root :to => "home#index"
   
   match 'goals/:id' => 'goals#view'
+  match 'goals/edit/:id' => 'goals#edit'
+  match 'goals/update/:id' => 'goals#update'
   match 'goals/' => 'goals#index'
   
   # The priority is based upon order of creation:

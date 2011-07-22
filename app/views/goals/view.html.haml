@@ -1,1 +1,15 @@
 View ##{@id}
+
+= link_to "edit", :action => 'edit'
+
+%h1 #{@goal.name}
+    
+We'd like to 
+%span.goalType #{@goal.goal_type}
+%span.count #{@goal.count}
+%span.measure #{@goal.measure} in 
+%span.time_count #{@goal.time_count} 
+%span.time_measure #{@goal.time_measure}
+
+.privacy
+  This goal is #{@privacy}
