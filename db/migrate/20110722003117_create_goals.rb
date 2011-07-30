@@ -7,7 +7,7 @@ class CreateGoals < ActiveRecord::Migration
       t.string "measure", :null => false    # eg. mi/km
       t.integer "time_count", :null => false  # eg. 1/5/30
       t.string "time_measure", :null => false # eg. days/months/hours
-      t.boolean "privacy", :null => false, :default => 0 # eg. 0 = public, 1 = private
+      t.boolean "privacy", :null => false, :default => false
       
       t.timestamps
     end
