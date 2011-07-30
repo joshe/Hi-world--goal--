@@ -10,16 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110722010558) do
+ActiveRecord::Schema.define(:version => 20110730144728) do
 
-  create_table "Goals", :force => true do |t|
-    t.string   "name"
+  create_table "goals", :force => true do |t|
+    t.string   "goal_name"
     t.string   "goal_type"
     t.integer  "count",                           :null => false
     t.string   "measure",                         :null => false
     t.integer  "time_count",                      :null => false
     t.string   "time_measure",                    :null => false
-    t.boolean  "privacy",      :default => false, :null => false
+    t.boolean  "private",      :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

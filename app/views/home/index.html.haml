@@ -1,3 +1,6 @@
 %h1 Home#index
 %p Find me in app/views/home/index.html.haml
 = @test
+
+= link_to "Goal 1", goal_path(@goal.id), :style => "display: block;"
+= link_to "view all goals", goals_path

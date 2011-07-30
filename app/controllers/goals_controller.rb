@@ -1,13 +1,14 @@
 class GoalsController < ApplicationController
 
   def index
+    @goals = Goal.all
     render "index"
   end
   
-  def view
+  def show
     @id = params[:id]
     @goal = Goal.find_by_id(params[:id])
-    if @goal.privacy == false
+    if @goal.private == false
       @privacy = "public"
     else
       @privacy = "private"

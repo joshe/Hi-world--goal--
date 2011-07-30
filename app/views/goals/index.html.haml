@@ -1,1 +1,17 @@
 %h1 Goals index
+
+.goals
+  - @goals.each do |goal|
+    %hr
+    %ul.goal
+      %li.goalName= link_to goal.goal_name, goal_path(goal.id)
+      %li.goalDetails 
+        we want to 
+        = goal.goal_type 
+        = goal.count
+        = goal.measure
+        in
+        = goal.time_count
+        = goal.time_measure 
+      - unless goal.private?
+        %li.joinGoal= link_to "I want to join"        
