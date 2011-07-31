@@ -1,0 +1,14 @@
+= form_for @goal, :as => :goal, :url => { :action => "create" } do |f|
+  = f.text_field :goal_name, :placeholder => "Goal name"
+  .defineGoal
+    we'd like to 
+    = f.text_field :goal_type, :placeholder => "Goal type"
+    = f.text_field :count, :placeholder => "count"
+    = f.text_field :measure, :placeholder => "measure"
+    in
+    = f.text_field :time_count, :placeholder => "time count"
+    = f.text_field :time_measure, :placeholder => "time measure"
+    = f.check_box :private
+    = f.label :private
+  
+  = submit_tag "Save"
