@@ -45,7 +45,7 @@ class GoalsController < ApplicationController
   end
   
   def destroy
-    Goal.find_by_id(params[:id]).destroy(params[:id])
+    Goal.find_by_id(params[:id]).destroy()
     flash[:message] = "Successfully deleted goal"
     redirect_to :action => "index"
   end

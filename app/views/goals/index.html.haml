@@ -6,6 +6,7 @@
     %ul.goal
       %li.goalName= link_to goal.goal_name, goal_path(goal.id)
       %li.editGoal= link_to "edit", edit_goal_path(goal.id)
+      %li.deleteGoal= link_to "delete", goal_path(goal), :method => :delete
       %li.goalDetails 
         we want to 
         = goal.goal_type 
