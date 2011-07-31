@@ -8,6 +8,7 @@ class GoalsController < ApplicationController
   def new
     @goal = Goal.new
     @goalTypes = Array.new
+    @goalTypes << ""
     @goalTypes << "Add new"
     Goal.all.each do |g|
       @goalTypes << g.goal_type

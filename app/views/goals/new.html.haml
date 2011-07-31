@@ -2,7 +2,7 @@
   = f.text_field :goal_name, :placeholder => "Goal name"
   .defineGoal
     we'd like to 
-    = f.select :goal_type, @goalTypes 
+    = f.select :goal_type, @goalTypes
     = f.text_field :count, :placeholder => "count"
     = f.text_field :measure, :placeholder => "measure"
     in
@@ -12,3 +12,5 @@
     = f.label :private
   
   = submit_tag "Save"
+  
+  
