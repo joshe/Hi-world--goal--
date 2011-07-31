@@ -5,6 +5,7 @@
     %hr
     %ul.goal
       %li.goalName= link_to goal.goal_name, goal_path(goal.id)
+      %li.editGoal= link_to "edit", edit_goal_path(goal.id)
       %li.goalDetails 
         we want to 
         = goal.goal_type 
@@ -14,4 +15,4 @@
         = goal.time_count
         = goal.time_measure 
       - unless goal.private?
-        %li.joinGoal= link_to "I want to join"        
+        %li.joinGoal= link_to "I want to join", goal_path(goal.id)        
