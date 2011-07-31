@@ -7,6 +7,11 @@ class GoalsController < ApplicationController
   
   def new
     @goal = Goal.new
+    @goalTypes = Array.new
+    @goalTypes << "Add new"
+    Goal.all.each do |g|
+      @goalTypes << g.goal_type
+    end
   end
   
   def create
@@ -21,11 +26,7 @@ class GoalsController < ApplicationController
   def show
     @id = params[:id]
     @goal = Goal.find_by_id(params[:id])
-    if @goal.private == false
-      @privacy = "public"
-    else
-      @privacy = "private"
-    end
+    @private = @goal.private? ? "private" : "public"
   end
   
   def edit
@@ -47,7 +48,8 @@ class GoalsController < ApplicationController
   def destroy
     Goal.find_by_id(params[:id]).destroy()
     flash[:message] = "Successfully deleted goal"
-    redirect_to :action => "index"
+    @goals = Goal.all
+    render "index"
   end
 
 end
